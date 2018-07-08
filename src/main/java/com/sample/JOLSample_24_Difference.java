@@ -19,5 +19,6 @@ public class JOLSample_24_Difference {
         GraphLayout gl3 = GraphLayout.parseInstance(chm);
         out.println(gl2.subtract(gl1).toPrintable());
         out.println(gl3.subtract(gl2).toPrintable());
+        out.println(gl3.subtract(gl1).toPrintable());
     }
 }

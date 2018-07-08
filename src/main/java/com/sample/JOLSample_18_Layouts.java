@@ -9,7 +9,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static java.lang.System.out;
-
+/*
+* 展示比ALL_LL更详细的可达性图
+* */
 public class JOLSample_18_Layouts {
     public static void main(String args[]){
         out.println(VM.current().details());

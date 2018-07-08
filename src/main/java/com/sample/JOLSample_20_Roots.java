@@ -55,16 +55,16 @@ public class JOLSample_20_Roots {
         L l4 = new L4();
         L l5 = new L5();
         L l6 = new L6();
-        // bind the ring
+        //形成一个环形链表
         l1.bind(l2);
         l2.bind(l3);
         l3.bind(l4);
         l4.bind(l5);
         l5.bind(l6);
         l6.bind(l1);
-        // current root
+        // 当前的root
         L r = l1;
-        // break all other roots
+        // 将其他的引用都置空
         l1 = l2 = l3 = l4 = l5 = l6 = null;
         long lastAddr = VM.current().addressOf(r);
         pw.printf("Fresh object is at %x%n", lastAddr);
@@ -88,7 +88,7 @@ public class JOLSample_20_Roots {
                 }
                 lastAddr = cur;
             }
-            // make garbage
+            //不停的分配内存触发垃圾回收
             for (int c = 0; c < 10000; c++) {
                 sink = new Object();
             }

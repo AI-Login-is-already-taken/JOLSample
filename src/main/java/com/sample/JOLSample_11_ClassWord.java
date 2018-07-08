@@ -1,7 +1,11 @@
 package com.sample;
 
 import org.openjdk.jol.info.ClassLayout;
+import org.openjdk.jol.info.GraphLayout;
 import org.openjdk.jol.vm.VM;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static java.lang.System.out;
 /*
@@ -17,6 +21,17 @@ public class JOLSample_11_ClassWord {
         out.println(ClassLayout.parseInstance(new A()).toPrintable());
         out.println(ClassLayout.parseInstance(new B()).toPrintable());
         out.println(ClassLayout.parseInstance(new C()).toPrintable());
+        try {
+            Object[] list = new Object[512];
+            for(int i =0;i<512;i+=8) {
+                list[i] = new Object();
+            }
+            Object obj = list;
+            //以图像的形式来展现对象的内存结构
+            GraphLayout.parseInstance(obj).toImage("OBJ.png");
+        }catch (Exception e){
+
+        }
     }
 
     public static class A{
@@ -29,5 +44,7 @@ public class JOLSample_11_ClassWord {
 
     public static class C{
         int a = 0;
+        Object o = null;
+        long l = 0;
     }
 }

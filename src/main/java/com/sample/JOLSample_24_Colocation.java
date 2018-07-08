@@ -26,6 +26,7 @@ public class JOLSample_24_Colocation {
         GraphLayout.parseInstance(chm).toImage("chm-1-new.png");
         for (int c = 2; c <= 5; c++) {
             GraphLayout.parseInstance(chm).toImage("chm-" + c + "-gc.png");
+            out.println(GraphLayout.parseInstance(chm).toPrintable());
             System.gc();
         }
         addElements(COUNT, chm);

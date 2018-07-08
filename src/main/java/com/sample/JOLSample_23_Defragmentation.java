@@ -12,10 +12,10 @@ public class JOLSample_23_Defragmentation {
     public static void main(String[] args) throws Exception {
         out.println(VM.current().details());
         // allocate some objects to beef up generations
-        for (int c = 0; c < 1000000; c++) {
+        /*for (int c = 0; c < 1000000; c++) {
             sink = new Object();
-        }
-        System.gc();
+        }*/
+        //System.gc();
         final int COUNT = 10000;
         Object[] array = new Object[COUNT];
         for (int c = 0; c < COUNT; c++) {

@@ -6,7 +6,9 @@ import org.openjdk.jol.vm.VM;
 import java.util.concurrent.TimeUnit;
 
 import static java.lang.System.out;
-
+/*
+* 重量级锁
+* */
 public class JOLSample_14_FatLocking {
     public static void main(String args[]) throws Exception{
         out.println(VM.current().details());
